@@ -1,7 +1,6 @@
 // pages/index.js
 import React from 'react';
 import Header from './components/Header';
-// import NavMenu from './components/NavMenu';
 import Footer from './components/Footer';
 
 const Home = () => {
