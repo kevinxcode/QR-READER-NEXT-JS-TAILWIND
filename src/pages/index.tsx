@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-20 text-center my-20">
-      <div className="flex-grow flex items-center justify-center">
+      <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-20 text-center my-20" style={{backgroundColor: 'red'}}>
+      <div className="flex-grow flex items-center justify-center" style={{backgroundColor: 'yellow', minWidth: '880px'}}>
         <div className="container mx-auto px-4 py-8">
           {/* Your dashboard content goes here */}
           <h1 className="text-3xl font-semibold mb-4">Welcome to the Dashboard</h1>
