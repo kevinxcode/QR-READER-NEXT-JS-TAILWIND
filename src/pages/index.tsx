@@ -15,6 +15,7 @@ const Home = () => {
           <p className="text-gray-700">
             This is your admin dashboard. You can add more content and components here.
           </p>
+          
         </div>
       </div>
       </main>

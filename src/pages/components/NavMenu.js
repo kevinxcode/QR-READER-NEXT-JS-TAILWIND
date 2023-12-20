@@ -26,8 +26,8 @@ const NavMenu = () => {
 
                         {/* */}
                         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                            <a href="/" class="border-slate-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" aria-current="page">Dashboarda</a>
-                            <a href="/playground" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Playground</a>
+                            <a href="/" class="border-slate-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" aria-current="page">Dashboard</a>
+                            <a href="/qr-reader" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">QR-Reader</a>
                         </div>
                         {/* */}
                     </div>
