@@ -48,8 +48,8 @@ const NavMenu = () => {
             {isMenuOpen && (
                 <div className='sm:hidden'>
                     <div class="space-y-1 pt-2 pb-3">
-                        <a href="/" class="bg-slate-50 border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" aria-current="page" data-headlessui-state="open">Dasahboard</a>
-                        <a href="/playground" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-headlessui-state="open">Playground</a>
+                        <a href="/" class="bg-slate-50 border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" aria-current="page" data-headlessui-state="open">Dashboard</a>
+                        <a href="/qr-reader" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-headlessui-state="open">Qr-Reader</a>
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
                         <div class="mt-3 space-y-1">
