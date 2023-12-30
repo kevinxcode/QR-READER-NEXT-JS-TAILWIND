@@ -7,7 +7,7 @@ import FloatingButton from "./components/FloatingButton";
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      {/* <Header /> */}
       <FloatingButton />
       <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-20 text-center my-20">
         <div className="flex-grow flex items-center justify-center">
@@ -23,7 +23,7 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
