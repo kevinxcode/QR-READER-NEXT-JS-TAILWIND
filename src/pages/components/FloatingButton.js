@@ -3,7 +3,7 @@ import React from "react";
 
 const FloatingButton = () => {
   return (
-    <div class="flex flex-nowrap fixed bg-gray-100  bottom-0 left-1/2 transform -translate-x-1/2 w-full h-16 items-center justify-center " >
+    <div class="flex flex-nowrap fixed bg-gray-100  bottom-0 left-1/2 transform -translate-x-1/2 w-full h-20 items-center justify-center " >
 
       <button class="m-1 bg-transparent hover:bg-blue-500 text-black font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
