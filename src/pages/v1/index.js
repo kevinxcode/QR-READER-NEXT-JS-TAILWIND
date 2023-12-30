@@ -1,14 +1,14 @@
 // pages/index.js
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import FloatingButton from "./components/FloatingButton";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FloatingButton from "../components/FloatingButton";
 
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      {/* <FloatingButton /> */}
+     
+      <FloatingButton />
       <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-20 text-center my-20">
         <div className="flex-grow flex items-center justify-center">
           <div className="container mx-auto px-4 py-8">
@@ -23,7 +23,7 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <Footer />
+     
     </div>
   );
 };
