@@ -28,6 +28,7 @@ const NavMenu = () => {
                         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                             <a href="/" class="border-slate-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" aria-current="page">Dashboard</a>
                             <a href="/qr-reader" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">QR-Reader</a>
+                            <a href="/v1" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Page v1</a>
                         </div>
                         {/* */}
                     </div>
@@ -50,6 +51,7 @@ const NavMenu = () => {
                     <div class="space-y-1 pt-2 pb-3">
                         <a href="/" class="bg-slate-50 border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" aria-current="page" data-headlessui-state="open">Dashboard</a>
                         <a href="/qr-reader" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-headlessui-state="open">Qr-Reader</a>
+                        <a href="/v1" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-headlessui-state="open">Page V1</a>
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
                         <div class="mt-3 space-y-1">
