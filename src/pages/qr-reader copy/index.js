@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-import FloatingButton from "../components/FloatingButton";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 // import { QrReader } from "react-qr-reader";
 import QrReader from "modern-react-qr-reader";
 
@@ -16,7 +16,7 @@ export default function Myqr() {
   };
   return (
     <div className="flex flex-col min-h-screen">
-      <FloatingButton />
+      <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-20 text-center ">
         <div
           className="flex-grow flex items-center justify-center"
@@ -34,7 +34,7 @@ export default function Myqr() {
           </div>
         </div>
       </main>
-     
+      <Footer />
     </div>
   );
 }
