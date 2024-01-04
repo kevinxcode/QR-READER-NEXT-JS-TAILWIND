@@ -10,7 +10,7 @@ const myQr = () => {
         </div>
         <div className="flex-auto p-4 pt-0 text-center">
           <hr className="h-px my-4 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
-          <h5 className="mb-0">KEVIN ALNIZAR</h5>
+          <h5 className="mb-0 font-bold">KEVIN ALNIZAR</h5>
           <span className="leading-tight text-xs">Belong Interactive</span>
         </div>
       </div>
