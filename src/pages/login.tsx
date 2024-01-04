@@ -7,7 +7,7 @@ const Login = () => {
         <div className="container mt-20 mx-auto px-2 py-8  max-w-md bg-white">
           <div className="w-full bg-white">
             <div className="text-center">
-              <h1 className="text-3xl font-semibold mb-4 ">OCEAN</h1>
+              <h1 className="text-3xl font-semibold mb-4 ">OCEAN 2.0</h1>
             </div>
             <form className="bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4">
               <div class="mb-4">
