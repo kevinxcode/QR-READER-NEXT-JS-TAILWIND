@@ -4,14 +4,20 @@ import { useRouter } from "next/router";
 
 const FloatingButton = () => {
   const router = useRouter();
-  const home = () => {
-    router.push("/");
+  const home_btn = () => {
+    router.push("/home");
+  };
+  const activity_btn = () => {
+    router.push("/activity");
+  };
+  const profile_btn = () => {
+    router.push("/profile");
   };
 
   return (
     <div class="flex flex-nowrap fixed bg-gray-100  bottom-0 left-1/2 transform -translate-x-1/2 w-full h-20 items-center justify-center ">
-      <a
-        href="/home"
+      <button
+        onClick={home_btn}
         class="py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
       >
         <svg
@@ -29,10 +35,10 @@ const FloatingButton = () => {
           />
         </svg>
         Home
-      </a>
+      </button>
 
-      <a
-        href="/activity"
+      <button
+        onClick={activity_btn}
         class="py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
       >
         <svg
@@ -55,10 +61,10 @@ const FloatingButton = () => {
           />
         </svg>
         Scan
-      </a>
+      </button>
 
-      <a
-        href="profile"
+      <button
+        onClick={profile_btn}
         class="py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
       >
         <svg
@@ -76,7 +82,7 @@ const FloatingButton = () => {
           />
         </svg>
         Profile
-      </a>
+      </button>
     </div>
   );
 };
