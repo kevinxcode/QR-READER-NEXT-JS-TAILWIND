@@ -1,10 +1,15 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
+  const home = () => {
+    router.push("/home");
+  };
   return (
     <div className="flex flex-col min-h-[100vh]">
       <div className="flex-grow flex items-center justify-center px-3 bg-white">
-        <div className="container mt-20 mx-auto px-2 py-8  max-w-md bg-white">
+        <div className="container  mx-auto px-2 py-8  max-w-md bg-white">
           <div className="w-full bg-white">
             <div className="text-center">
               <h1 className="text-3xl font-semibold mb-4 ">OCEAN 2.0</h1>
@@ -33,6 +38,7 @@ const Login = () => {
               </div>
               <div className="flex items-center mt-8 ">
                 <button
+                  onClick={home}
                   className="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
