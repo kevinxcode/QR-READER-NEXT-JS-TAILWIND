@@ -51,6 +51,7 @@ const Home = () => {
             </a>
           </div>
           <div aria-label="content" class="mt-9 grid gap-2.5">
+            {/*  */}
             <a href="qr-reader">
               <div class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
                 <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
@@ -89,6 +90,47 @@ const Home = () => {
                 </svg>
               </div>
             </a>
+            {/*  */}
+            {/*  */}
+            <a href="qr-reader">
+              <div class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+                    />
+                  </svg>
+                </span>
+                <div class="flex flex-col flex-1">
+                  <h3 class="text-sm font-medium">BOP Activity</h3>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 shrink-0"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M9 6l6 6l-6 6"></path>
+                </svg>
+              </div>
+            </a>
+            {/*  */}
           </div>
         </div>
       </div>
