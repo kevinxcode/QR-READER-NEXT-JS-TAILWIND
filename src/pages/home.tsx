@@ -12,13 +12,14 @@ const Home = () => {
         <div className="flex-grow flex items-center justify-center">
           <div className="container mx-auto px-4 py-8">
             {/* Your dashboard content goes here */}
-            <h1 className="text-3xl font-semibold mb-4">
-              Welcome to the Dashboard
+            <h1 className="text-3xl font-semibold mb-0 ">
+              OCEAN
+              <span className="leading-tight text-xs"> 2.0</span>
             </h1>
             <p className="text-gray-700">
-              This is your admin dashboard. You can add more content and
-              components here.
+              The new generation of Ocean System (2.0)
             </p>
+            {/* end content */}
           </div>
         </div>
       </main>
