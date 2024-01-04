@@ -2,6 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 
 const Login = () => {
+  var now = new Date(); // create a new Date object
+  var year = now.getFullYear(); // get the full year (four digits)
   const router = useRouter();
   const home = () => {
     router.push("/home");
@@ -11,11 +13,15 @@ const Login = () => {
       <div className="flex-grow flex items-center justify-center px-3 bg-white">
         <div className="container  mx-auto px-2 py-8  max-w-md bg-white">
           <div className="w-full bg-white">
-            <div className="text-center">
-              <h1 className="text-3xl font-semibold mb-4 ">OCEAN 2.0</h1>
+            <div className="text-center mb-4">
+              <h1 className="text-3xl font-semibold mb-0 ">
+                OCEAN
+                <span className="leading-tight text-xs"> 2.0</span>
+              </h1>
+              <span className="leading-tight text-xs">Vallourec SEA</span>
             </div>
             <form className="bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4">
-              <div class="mb-4">
+              <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                   Username / Employee ID
                 </label>
@@ -36,6 +42,7 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
+
               <div className="flex items-center mt-8 ">
                 <button
                   onClick={home}
@@ -44,6 +51,12 @@ const Login = () => {
                 >
                   Sign In
                 </button>
+              </div>
+
+              <div className="flex items-center mt-5 justify-center ">
+                <span className="leading-tight text-xs">
+                  © {year} SEA - HR
+                </span>
               </div>
             </form>
           </div>
