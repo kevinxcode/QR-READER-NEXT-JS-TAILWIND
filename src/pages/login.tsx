@@ -1,13 +1,20 @@
 import React from "react";
 import { useRouter } from "next/router";
+import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from './utils/AsyncStorage'
+
 
 const Login = () => {
   var now = new Date(); // create a new Date object
   var year = now.getFullYear(); // get the full year (four digits)
   const router = useRouter();
-  const home = () => {
-    router.push("/home");
+  
+  const data = { key: 'value' };
+  const LOGIN = () => {
+    setAsyncStorageData('myKey', data);
+    // router.push("/home");
   };
+
+ 
   return (
     <div className="flex flex-col min-h-[100vh]">
       <div className="flex-grow flex items-center justify-center px-3 bg-white">
@@ -45,12 +52,13 @@ const Login = () => {
 
               <div className="flex items-center mt-8 ">
                 <button
-                  onClick={home}
+                  onClick={LOGIN}
                   className="bg-gray-800 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
                   SIGN IN
                 </button>
+               
               </div>
 
               <div className="flex items-center mt-5 justify-center ">
