@@ -14,7 +14,7 @@ const getAsyncStorageData = async (key) => {
     const storedData = localStorage.getItem(key);
     if (storedData) {
       const parsedData = JSON.parse(storedData);
-      console.log('Retrieved data:', parsedData);
+      // console.log('Retrieved data:', parsedData);
       return parsedData;
     } else {
       console.log('No data found in storage.');

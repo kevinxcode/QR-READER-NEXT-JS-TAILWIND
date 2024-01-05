@@ -4,19 +4,25 @@ import FloatingButton from "../components/FloatingButton";
 import TopBar from "../components/TopBar";
 import MyQrPage from "../profile/myQr";
 import MyProfile from "../profile/myProfile";
+import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from '../utils/AsyncStorage'
 
 const Profile = () => {
   const [pageProfile, setpageProfile] = useState("page-qr");
   const router = useRouter();
+
   const signOut = () => {
+    removeAsyncStorageData('user-login');
     router.push("/");
   };
+
   const pageQR = () => {
     setpageProfile("page-qr");
   };
+
   const btnProfile = () => {
     setpageProfile("page-profile");
   };
+  
   var active_css =
     "text-white py-4 px-6 block hover:text-white-500 focus:outline-none  text-white border-b-2 font-medium border-blue-500";
   var inactive_css =

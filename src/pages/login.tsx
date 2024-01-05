@@ -8,10 +8,16 @@ const Login = () => {
   var year = now.getFullYear(); // get the full year (four digits)
   const router = useRouter();
   
-  const data = { key: 'value' };
-  const LOGIN = () => {
-    setAsyncStorageData('myKey', data);
-    // router.push("/home");
+
+  const LOGIN = async () => {
+    try {
+      const response = await fetch('https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json');
+      const jsonData = await response.json();
+      setAsyncStorageData('login-user', JSON.stringify(jsonData));
+      router.push("/home");
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   };
 
  
