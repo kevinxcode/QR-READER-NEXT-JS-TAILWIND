@@ -1,16 +1,22 @@
 // pages/index.js
 import react, { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 import Login from "./login";
 import FloatingButton from "./components/FloatingButton";
 import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from './utils/AsyncStorage'
 
 const Index = () => {
- const [dataLogin, setdataLogin] = useState([])
+  const router = useRouter();
+ const [dataLogin, setdataLogin] = useState(0)
   useEffect(() => {
     const check_login = async () => {
       const retrievedData = await getAsyncStorageData('login-user');
-      // console.log(retrievedData);
-      setdataLogin(dataLogin);
+      console.log(retrievedData);
+      if(retrievedData!=null){
+        router.push("/home");
+      }else{
+        router.push("/login");
+      }
     }
     return () => {
       check_login();
@@ -18,7 +24,7 @@ const Index = () => {
    
   }, []);
   
-  return <Login />;
+  // return <Login />;
 };
 
 export default Index;
