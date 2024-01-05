@@ -8,12 +8,12 @@ const Home = () => {
     <div className="flex flex-col min-h-[90vh]">
       <TopBar data={"SCAN"} />
       <FloatingButton />
-      <div class="flex mx-4 items-center justify-center mt-14">
-        <div class="p-8 rounded-3xl bg-white max-w-sm min-h-[65vh] w-full">
-          <div aria-label="header" class="flex items-center space-x-2">
+      <div className="flex mx-4 items-center justify-center mt-14">
+        <div className="p-8 rounded-3xl bg-white max-w-md min-h-[65vh] w-full">
+          <div aria-label="header" className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 shrink-0"
+              className="w-8 h-8 shrink-0"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -26,15 +26,15 @@ const Home = () => {
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path>
             </svg>
-            <div class="space-y-0.5 flex-1">
-              <h3 class="font-medium text-lg tracking-tight text-gray-900 leading-tight">
+            <div className="space-y-0.5 flex-1">
+              <h3 className="font-medium text-lg tracking-tight text-gray-900 leading-tight">
                 Activity
               </h3>
             </div>
-            <a class="inline-flex items-center shrink-0 justify-center w-8 h-8 rounded-full text-white bg-gray-900 focus:outline-none">
+            <a className="inline-flex items-center shrink-0 justify-center w-8 h-8 rounded-full text-white bg-gray-900 focus:outline-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5"
+                className="w-5 h-5"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -50,18 +50,18 @@ const Home = () => {
               </svg>
             </a>
           </div>
-          <div aria-label="content" class="mt-9 grid gap-2.5">
+          <div aria-label="content" className="mt-9 grid gap-2.5">
             {/*  */}
             <a href="qr-reader">
-              <div class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
-                <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
+              <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                   >
                     <path
                       stroke-linecap="round"
@@ -70,12 +70,12 @@ const Home = () => {
                     />
                   </svg>
                 </span>
-                <div class="flex flex-col flex-1">
-                  <h3 class="text-sm font-medium">OCEAN 2.0</h3>
+                <div className="flex flex-col flex-1">
+                  <h3 className="text-sm font-medium">OCEAN</h3>
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 shrink-0"
+                  className="w-5 h-5 shrink-0"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -93,15 +93,15 @@ const Home = () => {
             {/*  */}
             {/*  */}
             <a href="qr-reader">
-              <div class="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
-                <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
+              <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                   >
                     <path
                       stroke-linecap="round"
@@ -110,12 +110,12 @@ const Home = () => {
                     />
                   </svg>
                 </span>
-                <div class="flex flex-col flex-1">
-                  <h3 class="text-sm font-medium">BOP Activity</h3>
+                <div className="flex flex-col flex-1">
+                  <h3 className="text-sm font-medium">BOP Activity</h3>
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 shrink-0"
+                  className="w-5 h-5 shrink-0"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
