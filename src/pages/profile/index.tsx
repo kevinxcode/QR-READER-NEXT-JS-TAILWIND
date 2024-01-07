@@ -9,11 +9,6 @@ import { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData } from
 import { Session } from "../utils/Session";
 import Spinner from "../components/Spinner";
 import ConfirmDialog from "../utils/ConfirmDialog";
-import {
-  showSweetAlert,
-  showLoadingSweetAlert,
-  closeLoadingSweetAlert,
-} from "../utils/SweetAlert";
 
 
 const Profile = () => {
