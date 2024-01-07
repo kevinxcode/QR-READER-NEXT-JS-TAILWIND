@@ -4,11 +4,14 @@ import FloatingButton from "../components/FloatingButton";
 import TopBar from "../components/TopBar";
 import MyQrPage from "../profile/myQr";
 import MyProfile from "../profile/myProfile";
-import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from '../utils/AsyncStorage'
+import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from '../utils/AsyncStorage';
+import { Session } from "../utils/Session";
 
 const Profile = () => {
+  Session();
   const [pageProfile, setpageProfile] = useState("page-qr");
   const router = useRouter();
+  
 
   const signOut = () => {
     removeAsyncStorageData('login-user');

@@ -1,9 +1,12 @@
 // pages/index.js
-import React from "react";
+import React, {useEffect} from "react";
 import FloatingButton from "./components/FloatingButton";
 import TopBar from "./components/TopBar";
+import { Session } from "./utils/Session";
 
 const Home = () => {
+  Session();
+ 
   return (
     <div className="flex flex-col min-h-[90vh]">
       <TopBar data={"HOME"} />

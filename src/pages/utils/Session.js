@@ -1,21 +1,12 @@
-// components/Alert.js
-import React from 'react';
-import { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData } from './utils/AsyncStorage'
+import React, {useEffect} from 'react';
+import { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData } from '../utils/AsyncStorage'
 
-const Session = ({ type, message, isVisible }) => {
-  if (!isVisible) {
-    return null;
-  }
-
-  const alertClasses = `p-4 mb-4 ${
-    type === 'success' ? 'bg-green-500' : 'bg-red-500'
-  } text-white`;
-
-  return (
-    <div className={alertClasses}>
-      <strong>{type === 'success' ? 'Success!' : 'Error!'}</strong> {message}
-    </div>
-  );
+const Session = async  () => {
+ 
+  const retrievedData = await getAsyncStorageData('login-user');
+      if (retrievedData== null) {
+        window.location.href =  '/';
+      }
 };
 
-export default Session;
+export { Session};
