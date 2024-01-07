@@ -22,7 +22,7 @@ const Home = () => {
     return () => {
       setTimeout(() => {
         checkSession();
-      }, 500); 
+      }, 400); 
      
     };
 

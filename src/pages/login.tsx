@@ -37,7 +37,7 @@ const Login = () => {
       setTimeout(() => {
         showSweetAlert('Sigin Success', 'success',);
         router.push("/home");
-      }, 1500); // Simulated 3-second loading time
+      }, 800); // Simulated 3-second loading time
     } catch (error) {
       showSweetAlert('Username or Password invalid', 'error',);
       // console.error('Error fetching data:', error);

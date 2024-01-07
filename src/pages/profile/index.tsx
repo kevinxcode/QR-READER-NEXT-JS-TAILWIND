@@ -26,7 +26,7 @@ const Profile = () => {
     return () => {
       setTimeout(() => {
         checkSession();
-      }, 500); 
+      }, 400); 
      
     };
 
