@@ -5,8 +5,11 @@ const Session = async  () => {
  
   const retrievedData = await getAsyncStorageData('login-user');
       if (retrievedData== null) {
-        window.location.href =  '/';
+          return 0;
+      }else{
+          return 1;
       }
 };
+
 
 export { Session};
