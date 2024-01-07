@@ -41,8 +41,8 @@ const Login = () => {
       );
       const jsonData = await response.json();
       setAsyncStorageData("login-user", JSON.stringify(jsonData));
-      showSweetAlert("Sigin Success", "success");
       setTimeout(() => {
+        showSweetAlert("Sigin Success", "success");
         router.push("/home");
       }, 800); // Simulated 3-second loading time
     } catch (error) {
