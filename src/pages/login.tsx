@@ -1,26 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import  { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData }  from './utils/AsyncStorage'
+import { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData } from './utils/AsyncStorage';
 
+import { showSweetAlert, showLoadingSweetAlert, closeLoadingSweetAlert } from './utils/SweetAlert';
 
 const Login = () => {
   var now = new Date(); // create a new Date object
   var year = now.getFullYear(); // get the full year (four digits)
   const router = useRouter();
-  
+
 
   const LOGIN = async () => {
+    showLoadingSweetAlert();
     try {
       const response = await fetch('https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json');
       const jsonData = await response.json();
       setAsyncStorageData('login-user', JSON.stringify(jsonData));
-      router.push("/home");
+      setTimeout(() => {
+        showSweetAlert('Sigin Success', 'success',);
+        router.push("/home");
+      }, 1500); // Simulated 3-second loading time
     } catch (error) {
-      console.error('Error fetching data:', error);
+      showSweetAlert('Username or Password invalid', 'error',);
+      // console.error('Error fetching data:', error);
     }
   };
 
- 
+
+
   return (
     <div className="flex flex-col min-h-[100vh]">
       <div className="flex-grow flex items-center justify-center px-3 bg-white">
@@ -55,7 +62,6 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
-
               <div className="flex items-center mt-8 ">
                 <button
                   onClick={LOGIN}
@@ -64,9 +70,7 @@ const Login = () => {
                 >
                   SIGN IN
                 </button>
-               
               </div>
-
               <div className="flex items-center mt-5 justify-center ">
                 <span className="leading-tight text-xs">
                   © {year} SEA - HR
