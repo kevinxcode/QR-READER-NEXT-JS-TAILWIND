@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setAsyncStorageData, getAsyncStorageData, removeAsyncStorageData } from './utils/AsyncStorage';
+import {
+  setAsyncStorageData,
+  getAsyncStorageData,
+  removeAsyncStorageData,
+} from "./utils/AsyncStorage";
 
-import { showSweetAlert, showLoadingSweetAlert, closeLoadingSweetAlert } from './utils/SweetAlert';
+import {
+  showSweetAlert,
+  showLoadingSweetAlert,
+  closeLoadingSweetAlert,
+} from "./utils/SweetAlert";
 import { Session } from "./utils/Session";
 import Spinner from "./components/Spinner";
 
@@ -19,31 +27,29 @@ const Login = () => {
         router.push("/home");
       }
       setisPage(true);
-    }
+    };
     return () => {
       checkSession();
-
     };
-
   }, []);
-
 
   const LOGIN = async () => {
     showLoadingSweetAlert();
     try {
-      const response = await fetch('https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json');
+      const response = await fetch(
+        "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json",
+      );
       const jsonData = await response.json();
-      setAsyncStorageData('login-user', JSON.stringify(jsonData));
+      setAsyncStorageData("login-user", JSON.stringify(jsonData));
+      showSweetAlert("Sigin Success", "success");
       setTimeout(() => {
-        showSweetAlert('Sigin Success', 'success',);
         router.push("/home");
       }, 800); // Simulated 3-second loading time
     } catch (error) {
-      showSweetAlert('Username or Password invalid', 'error',);
+      showSweetAlert("Username or Password invalid", "error");
       // console.error('Error fetching data:', error);
     }
   };
-
 
   if (isPage) {
     return (
@@ -100,8 +106,8 @@ const Login = () => {
         </div>
       </div>
     );
-  }else{
-    return <Spinner />
+  } else {
+    return <Spinner />;
   }
 };
 export default Login;
