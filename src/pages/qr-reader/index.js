@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import TopBar from "../components/TopBar";
 import QrReader from "modern-react-qr-reader";
-import { Session } from "./utils/Session";
-
 
 export default function Myqr() {
-  Session();
   const [data, setData] = useState("No result");
   const [camera, setCamera] = useState("environment");
   const handleScan = (data) => {
