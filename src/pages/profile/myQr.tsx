@@ -12,7 +12,6 @@ const myQr = () => {
         "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/qr-employee.json",
       );
       const jsonData = await response.json();
-      console.log(jsonData.details.qr_code.data[0]._name);
       setisQR(jsonData.details.qr_code.qr);
       setisName(jsonData.details.qr_code.data[0]._name);
       setisJab(jsonData.details.qr_code.data[0]._jab);

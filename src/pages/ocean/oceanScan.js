@@ -36,23 +36,26 @@ const oceanScan = () => {
     };
   }, []);
 
+  const [preview, setPreview] = useState(null);
   const handleScan = (data) => {
-    if (data) {
-      setisScanned(true);
-      let timer = setTimeout(() => {
-        router.push({
-          pathname: "/ocean/resultQr",
-          query: { name: "Someone" },
-        });
-        // setData(data);
-        // showSweetAlert("Scan Success", "success");
-        // setisSubmit(true);
-      }, 500);
-
-      // this.state.result = data;
-      // console.log(this.state.result);
-      // this.setState({ result: data });
+    if (data && data.videowidth !== undefined) {
+      setPreview(data);
+    } else {
+      // Set a default value for 'videowidth'
+      setData(data);
+      setPreview({ videowidth: "defaultVideowidth" });
+      console.error("videowidth is not defined in the QR code result");
     }
+    // setisScanned(true);
+    // router.push({
+    //   pathname: "/ocean/resultQr",
+    //   query: { name: "Someone" },
+    // });
+    // setisScanned(true);
+    // router.push({
+    //   pathname: "/ocean/resultQr",
+    //   query: { name: "Someone" },
+    // });
   };
 
   const frontCam = () => {
@@ -95,6 +98,7 @@ const oceanScan = () => {
           </div>
 
           <QrReader
+            videowidth={preview?.videowidth}
             delay={200}
             facingMode={camera}
             onError={(error) => {
@@ -105,6 +109,10 @@ const oceanScan = () => {
             className="w-full"
             style={{ videoWidth: "100%" }}
           />
+          <div>
+            {data}
+            {/* Other UI elements related to the preview */}
+          </div>
           {/* <p style={{ marginTop: "15px" }}>{data}</p> */}
         </div>
       </div>
