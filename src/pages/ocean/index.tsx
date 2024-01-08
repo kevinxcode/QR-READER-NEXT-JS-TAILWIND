@@ -10,6 +10,7 @@ import {
 import { Session } from "../utils/Session";
 import Spinner from "../components/Spinner";
 import OceanList from "../ocean/oceanList";
+
 const Ocean = () => {
   const router = useRouter();
   const [isPage, setisPage] = useState(false);
@@ -28,19 +29,24 @@ const Ocean = () => {
       }, 400);
     };
   }, []);
+
   if (isPage) {
     return (
-      <div className="flex flex-col min-h-[90vh]">
+      <div className="flex flex-col min-h-[90vh] bg-white">
         <TopBar data={"OCEAN"} />
         <FloatingButton />
         <div className="container mx-auto px-2 py-8 mt-10  max-w-lg bg-white min-h-screen">
           {/* page content  */}
           <div className="px-8">
-            <span className="cursor-pointer  items-center justify-center ">
-              <div className="flex items-center justify-center space-x-4 p-3.5 rounded-full bg-gray-600 text-white">
-                <h3 className="text-sm font-medium">OCEAN SCAN</h3>
+            <a
+              href="/ocean/oceanScan"
+              className="cursor-pointer items-center justify-center "
+            >
+              <div className="flex flex-col items-center justify-center p-1 rounded-full bg-gray-600 text-white">
+                <h3 className="text-md font-medium">OCEAN SCAN</h3>
+                <span className="text-xs">click to scan</span>
               </div>
-            </span>
+            </a>
           </div>
           <OceanList />
           {/* end page content */}

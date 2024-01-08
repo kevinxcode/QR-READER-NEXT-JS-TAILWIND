@@ -9,7 +9,7 @@ const showSweetAlert = (title, icon) => {
     confirmButtonText: "OK",
     customClass: {
       confirmButton: "bg-blue-500 hover:bg-blue-600",
-      title: "text-yellow-500",
+      title: "text-gray-500",
     },
     allowOutsideClick: false, // Disable clicking outside the modal
     timer: 1850, // Auto-hide after 5000 milliseconds (5 seconds)
@@ -19,7 +19,7 @@ const showSweetAlert = (title, icon) => {
 
 const showLoadingSweetAlert = () => {
   Swal.fire({
-    title: "Loading...",
+    title: "loading...",
     html: false,
     icon: false,
     allowOutsideClick: false,

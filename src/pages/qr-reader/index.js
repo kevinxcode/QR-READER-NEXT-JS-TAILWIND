@@ -42,11 +42,6 @@ export default function Myqr() {
           style={{ width: "100%" }}
         >
           <div className="container mx-auto px-4  max-w-lg py-12 mt-15">
-            {/* <select value={camera} onChange={handleChange} class="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option value="environment">Back Camera</option>
-              <option value="user">Front Camera</option>
-            </select> */}
-
             <button
               onClick={backCam}
               class="m-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
