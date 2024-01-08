@@ -19,6 +19,7 @@ const oceanScan = () => {
   const [camera, setCamera] = useState("environment");
   const [isScanned, setisScanned] = useState(false);
   const [isSubmit, setisSubmit] = useState(false);
+
   useEffect(() => {
     const checkSession = async () => {
       const sessData = await Session();
