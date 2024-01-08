@@ -40,13 +40,17 @@ const Login = () => {
         "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json",
       );
       const jsonData = await response.json();
-      setAsyncStorageData("login-user", JSON.stringify(jsonData));
-      setTimeout(() => {
-        showSweetAlert("success", "success");
-        router.push("/home");
-      }, 800); // Simulated 3-second loading time
+      if (jsonData.loginCodes == "success") {
+        setAsyncStorageData("login-user", JSON.stringify(jsonData));
+        setTimeout(() => {
+          showSweetAlert("success", "success");
+          router.push("/home");
+        }, 800); // Simulated 3-second loading time
+      } else {
+        showSweetAlert(jsonData.details, "error");
+      }
     } catch (error) {
-      showSweetAlert("Username or Password invalid", "error");
+      showSweetAlert("Error Connection", "error");
       // console.error('Error fetching data:', error);
     }
   };
