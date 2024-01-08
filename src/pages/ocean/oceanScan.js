@@ -27,24 +27,14 @@ const oceanScan = () => {
   }, []);
 
   const handleScan = (data) => {
-    try {
-      showLoadingSweetAlert();
-      if (data) {
-        setTimeout(() => {
-          setisScanned(true);
-          setData(data);
-          setisScanned(true);
-          closeLoadingSweetAlert();
-        }, 1200);
-
-        // this.state.result = data;
-        // console.log(this.state.result);
-        // this.setState({ result: data });
-      }
-    } catch (error) {
-      closeLoadingSweetAlert();
-      setisScanned(false);
-      console.log(error);
+    if (data) {
+      setisScanned(true);
+      setData(data);
+      setisScanned(true);
+      showSweetAlert("Scan Success", "success");
+      // this.state.result = data;
+      // console.log(this.state.result);
+      // this.setState({ result: data });
     }
   };
 
@@ -72,7 +62,7 @@ const oceanScan = () => {
       </div>
       <div className="container mx-auto px-2 py-8 mt-10  max-w-lg bg-white min-h-screen">
         {isScanned ? (
-          <div className="flex flex-col min-h-[70vh] items-center justify-center w-full">
+          <div className="flex flex-col min-h-[60vh] items-center justify-center w-full">
             <span className="text-md font-bold">KEVIN ALNIZAR</span>
 
             <span className="text-md font-semibold mt-2">
