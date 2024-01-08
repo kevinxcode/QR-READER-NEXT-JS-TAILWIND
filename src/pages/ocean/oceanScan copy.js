@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 import TopBar from "../components/TopBar";
-
-const QrReader = dynamic(() => import("modern-react-qr-reader"), {
-  videoWidth: false,
-});
-
+import QrReader from "modern-react-qr-reader";
 import { Session } from "../utils/Session";
 import {
   showSweetAlert,
@@ -113,8 +108,7 @@ const oceanScan = () => {
                 console.error(error);
               }}
               onScan={handleScan}
-              className="w-full"
-              style={{ videoWidth: "100%" }}
+              style={{ width: "100%" }}
             />
             {/* <p style={{ marginTop: "15px" }}>{data}</p> */}
           </div>
