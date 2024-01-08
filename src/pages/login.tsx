@@ -50,8 +50,7 @@ const Login = () => {
         showSweetAlert(jsonData.details, "error");
       }
     } catch (error) {
-      showSweetAlert("Error Connection", "error");
-      // console.error('Error fetching data:', error);
+      showSweetAlert(error, "error");
     }
   };
 
