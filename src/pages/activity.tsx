@@ -32,8 +32,8 @@ const Home = () => {
       <div className="flex flex-col min-h-[90vh]">
         <TopBar data={"SCAN"} />
         <FloatingButton />
-        <div className="flex mx-4 items-center justify-center mt-14">
-          <div className="p-8 rounded-3xl bg-white max-w-md min-h-[65vh] w-full">
+        <div className="flex bg-white items-center justify-center mt-10">
+          <div className="p-8  bg-white max-w-lg min-h-screen w-full">
             <div aria-label="header" className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

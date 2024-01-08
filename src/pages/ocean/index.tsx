@@ -33,7 +33,7 @@ const Ocean = () => {
       <div className="flex flex-col min-h-[90vh]">
         <TopBar data={"OCEAN"} />
         <FloatingButton />
-        <div className="container mx-auto px-5 py-8 mt-10  max-w-lg bg-white min-h-screen">
+        <div className="container mx-auto px-2 py-8 mt-10  max-w-lg bg-white min-h-screen">
           {/* page content  */}
           <div className="px-8">
             <span className="cursor-pointer  items-center justify-center ">

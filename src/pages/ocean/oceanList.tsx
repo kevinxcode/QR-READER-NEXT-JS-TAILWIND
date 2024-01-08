@@ -1,6 +1,6 @@
 const oceanList = () => {
   return (
-    <div className="px-4 mt-8">
+    <div className="px-2 mt-8">
       <section className="py-1 bg-blueGray-50">
         <div className="w-full ">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6  ">
@@ -43,16 +43,16 @@ const oceanList = () => {
 
                 <tbody>
                   <tr>
-                    <th className="border-t-0 px-6 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4 ">
+                    <th className=" px-2 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4 ">
                       1
                     </th>
-                    <td className="font-semibold border-t-0 px-6 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4 ">
+                    <td className="font-semibold  px-6 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4 ">
                       08 Jan 2024 08:00:00
                     </td>
-                    <td className="font-semibold border-t-0 px-6 align-center border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4">
+                    <td className="font-semibold  px-6 align-center border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4">
                       P-123456
                     </td>
-                    <td className="border-t-0 px-6 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4">
+                    <td className=" px-6 align-middle border-b border-solid border-gray-200 text-xs whitespace-nowrap p-4">
                       <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
                       IN
                     </td>
