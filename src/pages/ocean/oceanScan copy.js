@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import TopBar from "../components/TopBar";
-import QrReader from "modern-react-qr-reader";
+
+const QrReader = dynamic(() => import("modern-react-qr-reader"), {
+  ssr: false,
+});
+
 import { Session } from "../utils/Session";
 import {
   showSweetAlert,
@@ -14,6 +19,7 @@ const oceanScan = () => {
   const [camera, setCamera] = useState("environment");
   const [isScanned, setisScanned] = useState(false);
   const [isSubmit, setisSubmit] = useState(false);
+
   useEffect(() => {
     const checkSession = async () => {
       const sessData = await Session();
@@ -108,7 +114,8 @@ const oceanScan = () => {
                 console.error(error);
               }}
               onScan={handleScan}
-              style={{ width: "100%" }}
+              className="w-full"
+              style={{ videoWidth: "100%" }}
             />
             {/* <p style={{ marginTop: "15px" }}>{data}</p> */}
           </div>

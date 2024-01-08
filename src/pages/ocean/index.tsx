@@ -35,7 +35,7 @@ const Ocean = () => {
     };
   }, []);
 
-  const toScan = () => {
+  const toScanOcean = () => {
     try {
       showLoadingSweetAlert();
       setTimeout(() => {
@@ -55,7 +55,7 @@ const Ocean = () => {
           {/* page content  */}
           <div className="px-8">
             <a
-              onClick={toScan}
+              onClick={toScanOcean}
               className="cursor-pointer items-center justify-center "
             >
               <div className="flex flex-col items-center justify-center p-1 rounded-full bg-gray-600 text-white">
