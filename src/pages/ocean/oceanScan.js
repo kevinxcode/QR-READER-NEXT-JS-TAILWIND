@@ -60,7 +60,7 @@ class OceanScan extends Component {
       showLoadingSweetAlert();
       setTimeout(() => {
         window.location.href = "/ocean";
-      }, 500);
+      }, 200);
     } catch (error) {
       console.log(error);
     }
