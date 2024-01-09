@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getProfileEmployee } from "../api/_querlab";
+import { getProfileEmployee } from "../api/querlab";
 import {
   showSweetAlert,
   showLoadingSweetAlert,
