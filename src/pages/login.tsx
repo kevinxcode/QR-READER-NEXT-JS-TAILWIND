@@ -6,7 +6,7 @@ import {
   removeAsyncStorageData,
 } from "./utils/AsyncStorage";
 
-import { getLogin } from "./api/_querlab";
+import { getLogin } from "./lib/_jsquerlab";
 
 import {
   showSweetAlert,
@@ -36,14 +36,17 @@ const Login = () => {
   }, []);
 
   const LOGIN = () => {
+    const username = document.getElementById("username") as HTMLInputElement;
+    const password = document.getElementById("password") as HTMLInputElement;
+
     showLoadingSweetAlert();
-    getLogin().then((data) => {
+    getLogin({ username, password }).then((data) => {
       if (data != null) {
         if (data.loginCodes == "success") {
-          setAsyncStorageData("login-user", JSON.stringify(data));
+          // setAsyncStorageData("login-user", JSON.stringify(data));
           setTimeout(() => {
             showSweetAlert("success", "success");
-            router.push("/home");
+            // router.push("/home");
           }, 800); // Simulated 3-second loading time
         } else {
           showSweetAlert(data.details, "error");
@@ -73,6 +76,7 @@ const Login = () => {
                     Username / Employee ID
                   </label>
                   <input
+                    id="username"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Username"
@@ -84,6 +88,7 @@ const Login = () => {
                     Password
                   </label>
                   <input
+                    id="password"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="password"
                     placeholder="Password"
