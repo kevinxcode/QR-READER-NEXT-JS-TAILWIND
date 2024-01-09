@@ -6,6 +6,8 @@ import {
   removeAsyncStorageData,
 } from "./utils/AsyncStorage";
 
+import { getLogin } from "./api/_querlab";
+
 import {
   showSweetAlert,
   showLoadingSweetAlert,
@@ -33,25 +35,23 @@ const Login = () => {
     };
   }, []);
 
-  const LOGIN = async () => {
+  const LOGIN = () => {
     showLoadingSweetAlert();
-    try {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/login.json",
-      );
-      const jsonData = await response.json();
-      if (jsonData.loginCodes == "success") {
-        setAsyncStorageData("login-user", JSON.stringify(jsonData));
-        setTimeout(() => {
-          showSweetAlert("success", "success");
-          router.push("/home");
-        }, 800); // Simulated 3-second loading time
+    getLogin().then((data) => {
+      if (data != null) {
+        if (data.loginCodes == "success") {
+          setAsyncStorageData("login-user", JSON.stringify(data));
+          setTimeout(() => {
+            showSweetAlert("success", "success");
+            router.push("/home");
+          }, 800); // Simulated 3-second loading time
+        } else {
+          showSweetAlert(data.details, "error");
+        }
       } else {
-        showSweetAlert(jsonData.details, "error");
+        showSweetAlert("Something went wrong", "error");
       }
-    } catch (error) {
-      showSweetAlert(error, "error");
-    }
+    });
   };
 
   if (isPage) {

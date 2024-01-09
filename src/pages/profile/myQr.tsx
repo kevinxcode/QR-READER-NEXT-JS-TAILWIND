@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { getQrEmployee } from "../api/_querlab";
+import {
+  showSweetAlert,
+  showLoadingSweetAlert,
+  closeLoadingSweetAlert,
+} from "../utils/SweetAlert";
+
 const myQr = () => {
   const [isQR, setisQR] = useState("");
   const [isName, setisName] = useState("");
@@ -6,17 +13,19 @@ const myQr = () => {
   useEffect(() => {
     getProfileQR();
   }, []);
-  const getProfileQR = async () => {
-    try {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/qr-employee.json",
-      );
-      const jsonData = await response.json();
-      setisQR(jsonData.details.qr_code.qr);
-      setisName(jsonData.details.qr_code.data[0]._name);
-      setisJab(jsonData.details.qr_code.data[0]._jab);
-    } catch (error) {}
+
+  const getProfileQR = () => {
+    getQrEmployee().then((data) => {
+      if (data != null) {
+        setisQR(data.details.qr_code.qr);
+        setisName(data.details.qr_code.data[0]._name);
+        setisJab(data.details.qr_code.data[0]._jab);
+      } else {
+        showSweetAlert("Something went wrong", "error");
+      }
+    });
   };
+
   return (
     <div className="w-full max-w-full px-3 mt-3 border-2">
       <div className=" flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">

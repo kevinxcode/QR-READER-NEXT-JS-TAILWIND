@@ -20,6 +20,7 @@ const oceanScan = () => {
   const [data, setData] = useState("No result");
   const [camera, setCamera] = useState("environment");
   const [isScanned, setisScanned] = useState(false);
+  const [preview, setPreview] = useState("defaultVideowidth");
   const [isSubmit, setisSubmit] = useState(false);
 
   useEffect(() => {
@@ -36,26 +37,11 @@ const oceanScan = () => {
     };
   }, []);
 
-  const [preview, setPreview] = useState(null);
   const handleScan = (data) => {
-    if (data && data.videowidth !== undefined) {
-      setPreview(data);
-    } else {
-      // Set a default value for 'videowidth'
+    if (data) {
+      setisScanned(true);
       setData(data);
-      setPreview({ videowidth: "defaultVideowidth" });
-      console.error("videowidth is not defined in the QR code result");
     }
-    // setisScanned(true);
-    // router.push({
-    //   pathname: "/ocean/resultQr",
-    //   query: { name: "Someone" },
-    // });
-    // setisScanned(true);
-    // router.push({
-    //   pathname: "/ocean/resultQr",
-    //   query: { name: "Someone" },
-    // });
   };
 
   const frontCam = () => {
@@ -66,7 +52,19 @@ const oceanScan = () => {
   };
 
   const btnBackOcean = () => {
+    setisScanned(false);
     window.location.href = "/ocean";
+  };
+
+  const btnScanAgain = () => {
+    setisScanned(false);
+  };
+
+  const previewStyle = {
+    height: 240,
+    width: 320,
+    display: "flex",
+    justifyContent: "center",
   };
 
   return (
@@ -75,13 +73,42 @@ const oceanScan = () => {
       <div className="flex flex-nowrap fixed bg-gray-100  bottom-0 left-1/2 transform -translate-x-1/2 w-full h-20 items-center justify-center ">
         <button
           onClick={btnBackOcean}
-          className="py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
+          className={
+            isScanned
+              ? "hidden"
+              : "py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
+          }
         >
           Back
         </button>
+
+        <button
+          onClick={btnScanAgain}
+          className={
+            !isScanned
+              ? "hidden"
+              : "py-2.5 px-5 me-2 text-xs font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
+          }
+        >
+          Scan Again
+        </button>
       </div>
       <div className="container mx-auto px-2 py-8 mt-10  max-w-lg bg-white min-h-screen">
-        <div>
+        <div
+          className={
+            !isScanned ? "hidden" : "flex flex-col items-center justify-center"
+          }
+        >
+          <div className="flex flex-col min-h-[60vh] items-center justify-center w-full">
+            <span className="text-md font-bold">KEVIN ALNIZAR</span>
+            <span className="text-md font-semibold mt-2">
+              08 Jan 2024 08:00
+            </span>
+            <span className="text-md font-semibold">P-12345</span>
+          </div>
+        </div>
+
+        <div className={isScanned ? "hidden" : ""}>
           <div className="flex flex-row items-center justify-center">
             <button
               onClick={backCam}
@@ -96,24 +123,20 @@ const oceanScan = () => {
               <span>Front</span>
             </button>
           </div>
-
-          <QrReader
-            videowidth={preview?.videowidth}
-            delay={200}
-            facingMode={camera}
-            onError={(error) => {
-              setisScanned(false);
-              console.error(error);
-            }}
-            onScan={handleScan}
-            className="w-full"
-            style={{ videoWidth: "100%" }}
-          />
-          <div>
-            {data}
-            {/* Other UI elements related to the preview */}
+          <div className="flex flex-row items-center justify-center mt-5">
+            <QrReader
+              videowidth={preview?.videowidth}
+              delay={200}
+              facingMode={camera}
+              onError={(error) => {
+                setisScanned(false);
+                console.error(error);
+              }}
+              onScan={handleScan}
+              className="w-full"
+              style={previewStyle}
+            />
           </div>
-          {/* <p style={{ marginTop: "15px" }}>{data}</p> */}
         </div>
       </div>
     </div>

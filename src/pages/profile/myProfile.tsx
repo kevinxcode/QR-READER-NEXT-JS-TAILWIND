@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { getProfileEmployee } from "../api/_querlab";
+import {
+  showSweetAlert,
+  showLoadingSweetAlert,
+  closeLoadingSweetAlert,
+} from "../utils/SweetAlert";
+
 const MyProfile = () => {
   const [isNik, setisNik] = useState("");
   const [isName, setisName] = useState("");
@@ -9,20 +16,20 @@ const MyProfile = () => {
   useEffect(() => {
     getProfile();
   }, []);
-  const getProfile = async () => {
-    try {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/kevinxcode/JSON-Example/main/ocean/employee-profile.json",
-      );
-      const jsonData = await response.json();
-
-      setisNik(jsonData.details[0]._nik);
-      setisName(jsonData.details[0]._name);
-      setisDept(jsonData.details[0]._dept);
-      setisJab(jsonData.details[0]._jab);
-      setisEmail(jsonData.details[0]._email);
-    } catch (error) {}
+  const getProfile = () => {
+    getProfileEmployee().then((data) => {
+      if (data != null) {
+        setisNik(data.details[0]._nik);
+        setisName(data.details[0]._name);
+        setisDept(data.details[0]._dept);
+        setisJab(data.details[0]._jab);
+        setisEmail(data.details[0]._email);
+      } else {
+        showSweetAlert("Something went wrong", "error");
+      }
+    });
   };
+
   return (
     <div className="w-full max-w-full px-3 ">
       <div className=" flex flex-col h-full min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
