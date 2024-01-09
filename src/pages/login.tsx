@@ -41,6 +41,7 @@ const Login = () => {
 
     showLoadingSweetAlert();
     getLogin({ username, password }).then((data) => {
+      console.log(data);
       if (data != null) {
         if (data.loginCodes == "success") {
           // setAsyncStorageData("login-user", JSON.stringify(data));
