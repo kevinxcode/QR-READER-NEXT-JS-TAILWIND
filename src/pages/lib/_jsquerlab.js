@@ -3,10 +3,6 @@ export async function getLogin({ username, password }) {
   myHeaders.append("Authorization", "BoP2023!");
   myHeaders.append("User-Agent", "bop.citratubindo.com");
   myHeaders.append("Content-Type", "text/plain");
-  myHeaders.append(
-    "Cookie",
-    "sys-hr_system_session=pmcglo7poqgbinhv20e2vn1lt0bqqabq",
-  );
 
   var raw = '{"username":"kevin.alnizar","password":"Kijang=13"}';
 
