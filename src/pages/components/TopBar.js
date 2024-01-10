@@ -17,7 +17,7 @@ const TopBar = ({ data }) => {
           setIsConnected(false);
         }
       });
-    }, 5000);
+    }, 10000);
   };
 
   return (
