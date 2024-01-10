@@ -47,3 +47,50 @@ export async function getLogin({ username, password }) {
     return null;
   }
 }
+
+
+const saveReg = () =>{
+  setisLoading(true);
+  fetch('https://admin40th.citratubindo.com/api/saveReg', {
+    method: 'post',
+    header: {
+         Accept: 'application/json',
+         'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            nik: emp_id,
+            fullname: full_name,
+            tgl_lahir: tgl_lahir,
+            dept: dept,
+            company: company,
+            total_attend: total_attend,
+            noted_remark: noted_remark,
+            photo_emp: imgSrc,
+            unique_code: unique_code,
+        }),
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+        setisLoading(false);
+        if(responseJson.msg=='Success'){
+          localStorage.setItem("session_qr", arr_unique);
+          const arr_unique = responseJson.details.unique_code_64;
+          localStorage.setItem("session_qr", arr_unique);
+           router.push({
+            pathname: '/page_qr',
+            query: { ref: arr_unique }
+           })
+        }else{
+          const arr_unique = responseJson.details[0].unique_code_64;
+          router.push({
+            pathname: '/page_qr',
+            query: { ref: arr_unique }
+           })
+        }
+
+    })
+    .catch((error) => {
+        setisLoading(false);
+        // alert('An error occurred while fetching data');
+    });
+}
