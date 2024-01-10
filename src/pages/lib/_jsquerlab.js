@@ -28,3 +28,22 @@ export async function getLogin({ usernameValue, passwordValue }) {
   //   console.log(responseJson);
   // });
 }
+
+export async function getConnectionIndicator() {
+  try {
+    const res = await window.fetch(
+      "https://hrd.citratubindo.com/sys-hr/app/api",
+    );
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+  // .then((response) => response.json())
+  // .then((responseJson) => {
+  //   console.log(responseJson);
+  // });
+}

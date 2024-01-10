@@ -1,8 +1,19 @@
 // FloatingButton.js
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getConnectionIndicator } from "../lib/_jsquerlab";
 
 const TopBar = ({ data }) => {
   const [isConnected, setIsConnected] = React.useState(false);
+  useEffect(() => {
+    getConnectionIndicator().then((data) => {
+      if (data != null) {
+        setIsConnected(true);
+      } else {
+        setIsConnected(false);
+      }
+    });
+  });
+
   return (
     <div className="flex flex-col fixed bg-gray-100  top-0 left-1/2 transform -translate-x-1/2 w-full h-12 items-center justify-center ">
       {/* connection */}
