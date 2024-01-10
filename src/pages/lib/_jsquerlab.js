@@ -47,3 +47,55 @@ export async function getConnectionIndicator() {
   //   console.log(responseJson);
   // });
 }
+
+export async function getQrEmployee({ gidValue }) {
+  try {
+    const res = await window.fetch(
+      "https://hrd.citratubindo.com/sys-hr/api-qr-employee",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "QrEmployee321!",
+          "User-Agent": "qr_employee",
+          "content-type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          post_data: gidValue,
+        }),
+      },
+    );
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function getProfileEmployee({ gidValue }) {
+  try {
+    const res = await window.fetch(
+      "https://hrd.citratubindo.com/sys-hr/api-employee-profile",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "ProfileEmp23!",
+          "User-Agent": "employee-profile",
+          "content-type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          post_data: gidValue,
+        }),
+      },
+    );
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+}

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getProfileEmployee } from "../api/querlab";
+import { getProfileEmployee } from "../lib/_jsquerlab";
+import SpinnerSub from "../components/SpinnerSub";
+import {
+  setAsyncStorageData,
+  getAsyncStorageData,
+  removeAsyncStorageData,
+} from "../utils/AsyncStorage";
 import {
   showSweetAlert,
   showLoadingSweetAlert,
@@ -12,12 +18,18 @@ const MyProfile = () => {
   const [isDept, setisDept] = useState("");
   const [isJab, setisJab] = useState("");
   const [isEmail, setisEmail] = useState("");
+  const [isLoaded, setisLoaded] = useState(false);
 
   useEffect(() => {
     getProfile();
   }, []);
-  const getProfile = () => {
-    getProfileEmployee().then((data) => {
+  const getProfile = async () => {
+    const retrievedData = await getAsyncStorageData("login-user");
+    const obj = JSON.parse(retrievedData);
+    let gidValue: string = obj.details[0]._gid;
+
+    getProfileEmployee({ gidValue }).then((data) => {
+      setisLoaded(true);
       if (data != null) {
         setisNik(data.details[0]._nik);
         setisName(data.details[0]._name);
@@ -43,6 +55,7 @@ const MyProfile = () => {
       </div>
       <div className="flex-auto p-4">
         <hr className="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent" />
+        {!isLoaded && <SpinnerSub />}
         <ul className="flex flex-col pl-0 mb-0 rounded-lg">
           <li className=" block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
             <strong className="text-slate-700">Employee ID : </strong>
