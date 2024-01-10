@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const showSweetAlert = (title, icon) => {
   Swal.fire({
-    title: title || "Custom Alert!",
+    title: title || "Alert",
     text: false,
     icon: icon || "success",
     confirmButtonText: "OK",
