@@ -16,6 +16,24 @@ import {
 import { Session } from "./utils/Session";
 import Spinner from "./components/Spinner";
 
+const btnLogin = async () => {
+  const response = await window.fetch('https://hrd.citratubindo.com/sys-hr/auth/tes_auth', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json;charset=UTF-8',
+    },
+    body: JSON.stringify({
+      query: 'aaaa',
+      variables: 'bbb',
+    }),
+  })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+
+    })
+}
+
 const Login = () => {
   var now = new Date(); // create a new Date object
   var year = now.getFullYear(); // get the full year (four digits)
@@ -35,7 +53,7 @@ const Login = () => {
     };
   }, []);
 
-  const LOGIN = () => {
+  const btnLogin2 = () => {
     const username = document.getElementById("username") as HTMLInputElement;
     const password = document.getElementById("password") as HTMLInputElement;
 
@@ -97,7 +115,7 @@ const Login = () => {
                 </div>
                 <div className="flex items-center mt-8 ">
                   <button
-                    onClick={LOGIN}
+                    onClick={btnLogin}
                     className="bg-gray-800 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="button"
                   >
