@@ -56,7 +56,7 @@ export async function getQrEmployee({ gidValue }) {
         method: "POST",
         headers: {
           Authorization: "QrEmployee321!",
-          "User-Agent": "qr_employee",
+          Auth_username: "qr_employee",
           "content-type": "application/json;charset=UTF-8",
         },
         body: JSON.stringify({
@@ -82,7 +82,7 @@ export async function getProfileEmployee({ gidValue }) {
         method: "POST",
         headers: {
           Authorization: "ProfileEmp23!",
-          "User-Agent": "employee-profile",
+          Auth_username: "employee-profile",
           "content-type": "application/json;charset=UTF-8",
         },
         body: JSON.stringify({

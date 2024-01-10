@@ -30,7 +30,11 @@ const MyProfile = () => {
 
     getProfileEmployee({ gidValue }).then((data) => {
       setisLoaded(true);
-      if (data != null) {
+      if (
+        data != null &&
+        data.loginCodes != "error" &&
+        data.details[0]._nik != "undefined"
+      ) {
         setisNik(data.details[0]._nik);
         setisName(data.details[0]._name);
         setisDept(data.details[0]._dept);
