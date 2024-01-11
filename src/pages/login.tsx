@@ -72,7 +72,7 @@ const Login = () => {
             }, 800); // Simulated 3-second loading time
           } else {
             showSweetAlert(
-              "Your Device is not valid or contact support for change the Device",
+              "Your last login DEVICE is not valid or contact support for change the Device",
               "error",
             );
             setisAlert(data.details[0]._device_browser);
@@ -105,7 +105,7 @@ const Login = () => {
         {isAlert != null && (
           <Alert
             data={
-              "Your Device is not valid or contact support for change the Device"
+              "Your last login DEVICE is not valid or contact support for change the Device"
             }
             subdata={"last signin with " + isAlert}
           />
