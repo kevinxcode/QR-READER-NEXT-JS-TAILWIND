@@ -28,6 +28,10 @@ const Home = () => {
     setisPage(false);
     router.push("/ocean");
   };
+  const pageWorkspace = () => {
+    setisPage(false);
+    router.push("/workspace");
+  };
   if (isPage) {
     return (
       <div className="flex flex-col min-h-[90vh]">
@@ -56,24 +60,6 @@ const Home = () => {
                   Activity
                 </h3>
               </div>
-              <a className="inline-flex items-center shrink-0 justify-center w-8 h-8 rounded-full text-white bg-gray-900 focus:outline-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M17 7l-10 10"></path>
-                  <path d="M8 7l9 0l0 9"></path>
-                </svg>
-              </a>
             </div>
             <div aria-label="content" className="mt-9 grid gap-2.5">
               {/*  */}
@@ -157,7 +143,7 @@ const Home = () => {
               </a>
               {/*  */}
               {/*  */}
-              <a href="qr-reader">
+              <span onClick={pageWorkspace} className="cursor-pointer">
                 <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
                   <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                     <svg
@@ -176,7 +162,7 @@ const Home = () => {
                     </svg>
                   </span>
                   <div className="flex flex-col flex-1">
-                    <h3 className="text-sm font-medium">Create Activity</h3>
+                    <h3 className="text-sm font-medium">My Workspace</h3>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +180,7 @@ const Home = () => {
                     <path d="M9 6l6 6l-6 6"></path>
                   </svg>
                 </div>
-              </a>
+              </span>
               {/*  */}
             </div>
           </div>
