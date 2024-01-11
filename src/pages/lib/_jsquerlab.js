@@ -17,6 +17,7 @@ export async function getLogin({ usernameValue, passwordValue }) {
           username: usernameValue,
           password: passwordValue,
           device_uid: obj.uuid,
+          device_browser: obj.browser,
         }),
       },
     );

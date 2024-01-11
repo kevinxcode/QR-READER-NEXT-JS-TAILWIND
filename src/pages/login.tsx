@@ -16,6 +16,7 @@ import {
 import { Session } from "./utils/Session";
 import { uidGet } from "./utils/DeviceUUID";
 import Spinner from "./components/Spinner";
+import Alert from "./utils/Alert";
 
 const Login = () => {
   var now = new Date(); // create a new Date object
@@ -24,6 +25,8 @@ const Login = () => {
 
   const [isPage, setisPage] = useState(false);
   const [isMobile, setisMobile] = useState(true);
+  const [isDevUid, setisDevUid] = useState(null);
+  const [isAlert, setisAlert] = useState(null);
   useEffect(() => {
     const checkSession = async () => {
       const sessData = await Session();
@@ -35,8 +38,10 @@ const Login = () => {
     const checkUid = async () => {
       const uidData = await Promise.all([uidGet()]);
       const obj = JSON.parse(uidData[0]);
-      console.log(obj.isMobile);
-      setisMobile(obj.isMobile); // block with mobile only
+      // console.log(obj.uuid);
+      setisDevUid(obj.uuid);
+      // setisMobile(obj.isMobile); // block with mobile only
+      setisMobile(true); // block with mobile only remove of production
     };
     return () => {
       checkSession();
@@ -58,12 +63,20 @@ const Login = () => {
     }).then((data) => {
       if (data != null) {
         if (data.loginCodes == "success") {
-          // console.log(JSON.stringify(data.details[0]._nik));
-          // setAsyncStorageData("login-user", JSON.stringify(data));
-          setTimeout(() => {
-            showSweetAlert("success", "success");
-            // router.push("/home");
-          }, 800); // Simulated 3-second loading time
+          // console.log(data.details[0]._device_uid);
+          if (data.details[0]._device_uid == isDevUid) {
+            setAsyncStorageData("login-user", JSON.stringify(data));
+            setTimeout(() => {
+              showSweetAlert("success", "success");
+              router.push("/home");
+            }, 800); // Simulated 3-second loading time
+          } else {
+            showSweetAlert(
+              "Your Device is not valid or contact support for change the Device",
+              "error",
+            );
+            setisAlert(data.details[0]._device_browser);
+          }
         } else {
           showSweetAlert("Username or password is incorrect", "error");
         }
@@ -89,6 +102,15 @@ const Login = () => {
   if (isPage) {
     return (
       <div className="flex flex-col min-h-[100vh]">
+        {isAlert != null && (
+          <Alert
+            data={
+              "Your Device is not valid or contact support for change the Device"
+            }
+            subdata={"last signin with " + isAlert}
+          />
+        )}
+
         <div className="flex-grow flex items-center justify-center px-3 bg-white">
           <div className="container  mx-auto px-2 py-8  max-w-md bg-white">
             {isMobile ? (
