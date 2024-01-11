@@ -1,4 +1,8 @@
+import { uidGet } from "../utils/DeviceUUID";
+
 export async function getLogin({ usernameValue, passwordValue }) {
+  const uidData = await Promise.all([uidGet()]);
+  const obj = JSON.parse(uidData[0]);
   try {
     const res = await window.fetch(
       "https://hrd.citratubindo.com/sys-hr/sys-login",
@@ -12,6 +16,7 @@ export async function getLogin({ usernameValue, passwordValue }) {
         body: JSON.stringify({
           username: usernameValue,
           password: passwordValue,
+          device_uid: obj.uuid,
         }),
       },
     );

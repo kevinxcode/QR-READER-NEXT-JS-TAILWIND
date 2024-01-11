@@ -35,7 +35,7 @@ const Home = () => {
   if (isPage) {
     return (
       <div className="flex flex-col min-h-[90vh]">
-        <TopBar data={"SCAN"} />
+        <TopBar data={"ACTIVITY"} />
         <FloatingButton />
         <div className="flex bg-white items-center justify-center mt-10">
           <div className="p-8  bg-white max-w-lg min-h-screen w-full">
@@ -64,7 +64,7 @@ const Home = () => {
             <div aria-label="content" className="mt-9 grid gap-2.5">
               {/*  */}
               <span onClick={pageOcean} className="cursor-pointer">
-                <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <div className="flex items-center space-x-4 p-3.5 rounded bg-gray-100">
                   <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Home = () => {
               {/*  */}
               {/*  */}
               <a href="qr-reader">
-                <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <div className="flex items-center space-x-4 p-3.5 rounded bg-gray-100">
                   <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@ const Home = () => {
               {/*  */}
               {/*  */}
               <span onClick={pageWorkspace} className="cursor-pointer">
-                <div className="flex items-center space-x-4 p-3.5 rounded-full bg-gray-100">
+                <div className="flex items-center space-x-4 p-3.5 rounded bg-gray-100">
                   <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full bg-white text-gray-900">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +162,7 @@ const Home = () => {
                     </svg>
                   </span>
                   <div className="flex flex-col flex-1">
-                    <h3 className="text-sm font-medium">My Workspace</h3>
+                    <h3 className="text-sm font-medium">Event Activity</h3>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

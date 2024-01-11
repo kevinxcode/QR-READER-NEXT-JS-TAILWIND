@@ -28,14 +28,14 @@ const Workspace = () => {
   if (isPage) {
     return (
       <div className="flex flex-col min-h-[90vh]">
-        <TopBar data={"My Workspace"} />
+        <TopBar data={"Event"} />
         <FloatingButton />
         <div className="flex bg-white items-center justify-center mt-12">
           <div className="p-8  bg-white max-w-lg min-h-screen w-full">
             <div aria-label="header" className="flex items-center space-x-2">
               <div className="space-y-0.5 flex-1">
                 <h3 className="font-medium text-lg tracking-tight text-gray-900 leading-tight">
-                  Workspace Activity
+                  Activity List
                 </h3>
               </div>
 
