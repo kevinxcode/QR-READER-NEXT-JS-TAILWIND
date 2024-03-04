@@ -1,17 +1,18 @@
 import { uidGet } from "../utils/DeviceUUID";
 
 export async function getLogin({ usernameValue, passwordValue }) {
+  
   const uidData = await Promise.all([uidGet()]);
   const obj = JSON.parse(uidData[0]);
   try {
     const res = await window.fetch(
-      "https://hrd.citratubindo.com/sys-hr/sys-login",
+      "https://hrms.citratubindo.com/sys-login-v2",
       {
         method: "POST",
         headers: {
-          Authorization: "HrdApp23!",
-          "User-Agent": "hrd_app_login",
-          "content-type": "application/json;charset=UTF-8",
+          "Authorization_pass": "mobileAuth23!",
+          "User_Agent": "mobile-auth",
+          "content-type": "application/json",
         },
         body: JSON.stringify({
           username: usernameValue,

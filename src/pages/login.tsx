@@ -61,6 +61,7 @@ const Login = () => {
       usernameValue: username.value,
       passwordValue: password.value,
     }).then((data) => {
+      console.log(data);
       if (data != null) {
         if (data.loginCodes == "success") {
           // console.log(data.details[0]._device_uid);
@@ -72,13 +73,13 @@ const Login = () => {
             }, 800); // Simulated 3-second loading time
           } else {
             showSweetAlert(
-              "Your last login DEVICE is not valid or contact support for change the Device",
+              "DEVICE is not valid, Your last login with ("+data.details[0]._device_browser+") or contact support for change the Device",
               "error",
             );
             setisAlert(data.details[0]._device_browser);
           }
         } else {
-          showSweetAlert("Username or password is incorrect", "error");
+          showSweetAlert(data.details, "error");
         }
       } else {
         showSweetAlert("Something went wrong", "error");
