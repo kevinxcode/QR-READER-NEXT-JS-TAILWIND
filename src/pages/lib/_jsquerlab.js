@@ -6,7 +6,7 @@ export async function getLogin({ usernameValue, passwordValue }) {
   const obj = JSON.parse(uidData[0]);
   try {
     const res = await window.fetch(
-      "https://hrms.citratubindo.com/sys-login-v2",
+      "https://hrms.citratubindo.com/v2/sys-login",
       {
         method: "POST",
         headers: {
